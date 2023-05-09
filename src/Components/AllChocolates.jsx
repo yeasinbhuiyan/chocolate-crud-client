@@ -16,7 +16,7 @@ const AllChocolates = () => {
     return (
         <div className='p-24'>
             <div className='my-5'>
-                <h1 className='bg-cyan-100 p-3 text-center rounded text-4xl'>Chocolate Management System</h1>
+                <h1 className='bg-purple-100 p-3 text-center rounded text-4xl'>Chocolate Management System</h1>
             </div>
 
 
@@ -39,7 +39,7 @@ const AllChocolates = () => {
             </div>
 
             <div className='text-center my-5'>
-                <Link to='/addChocolates'> <button className='btn hover:bg-cyan-500 border-teal-100 hover:border-teal-100 bg-cyan-300 p-2 rounded'>Add Chocolate</button></Link>
+                <Link to='/addChocolates'> <button className='btn hover:bg-purple-800 border-purple-400 hover:border-purple-400 bg-purple-500 p-2 rounded'>Add Chocolate</button></Link>
             </div>
 
         </div>

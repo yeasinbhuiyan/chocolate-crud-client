@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import { FaArrowLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const AddChocolates = () => {
@@ -34,7 +35,7 @@ const AddChocolates = () => {
     return (
         <div>
             <div className='p-24 bg-gray-100'>
-                <Link to='/'> <button className='btn btn-black'>Back</button></Link>
+                <Link to='/'> <button className=' btn hover:bg-purple-800 border-purple-400 hover:border-purple-400 bg-purple-500 p-2 rounded'><FaArrowLeft></FaArrowLeft> Back</button></Link>
                 <h1 className='text-center font-extrabold text-purple-600 text-4xl'>Chocolate Add Form</h1>
 
                 <form onSubmit={handleSubmit}>

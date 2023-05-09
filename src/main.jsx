@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
 import {
   createBrowserRouter,
@@ -20,8 +19,9 @@ const router = createBrowserRouter([
     element: <AddChocolates></AddChocolates>
   },
   {
-    path: '/updateChocolate',
-    element: <UpdateChocolate></UpdateChocolate>
+    path: '/updateChocolate/:id',
+    element: <UpdateChocolate></UpdateChocolate>,
+    loader: ({ params }) => fetch(`http://localhost:5000/chocolates/${params.id}`)
   }
 ])
 
