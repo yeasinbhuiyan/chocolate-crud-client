@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const AddChocolates = () => {
+    const navigate = useNavigate()
     const handleSubmit = (event) => {
         event.preventDefault()
         const form = event.target
@@ -25,8 +27,14 @@ const AddChocolates = () => {
             .then(data => {
 
                 if (data.insertedId) {
-                    alert('Chocolate Added')
+                    Swal.fire(
+                        'Good Job',
+                        'Chocolate Added!',
+                        'success'
+                    )
                     console.log(data)
+                    navigate('/')
+
                 }
 
             })

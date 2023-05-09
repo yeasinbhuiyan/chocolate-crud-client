@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const UpdateChocolate = () => {
+    const navigate= useNavigate()
     const updatedChocolate = useLoaderData()
     const { name, photo, country, category, _id } = updatedChocolate
     console.log(updatedChocolate)
@@ -32,7 +34,16 @@ const UpdateChocolate = () => {
                 if (data.modifiedCount > 0) {
 
                     console.log(data)
-                    alert('Chocolate Updated')
+                    Swal.fire(
+                        'Good job!',
+                        'Chocolate Updated!',
+                        'success'
+                      )
+                  
+
+
+                    navigate('/')
+
 
                 }
 
