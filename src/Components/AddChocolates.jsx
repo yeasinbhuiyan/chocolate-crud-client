@@ -3,28 +3,38 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const AddChocolates = () => {
-    const handleSubmit =(event)=>{
+    const handleSubmit = (event) => {
         event.preventDefault()
         const form = event.target
         const name = form.name.value
         const country = form.country.value
         const category = form.category.value
-        const chocolate = {name,country,category}
+        const chocolate = { name, country, category }
         console.log(chocolate)
 
-        fetch('http://localhost:5000/chocolates',{
+        fetch('http://localhost:5000/chocolates', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(chocolate)
 
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-        })
+            .then(res => res.json())
+            .then(data => {
+
+                if (data.insertedId) {
+                    alert('Chocolate Added')
+                    console.log(data)
+                }
+
+            })
 
     }
     return (
         <div>
             <div className='p-24 bg-gray-100'>
-                <Link> <button className='btn btn-black'>Back</button></Link>
+                <Link to='/'> <button className='btn btn-black'>Back</button></Link>
                 <h1 className='text-center font-extrabold text-purple-600 text-4xl'>Chocolate Add Form</h1>
 
                 <form onSubmit={handleSubmit}>

@@ -8,11 +8,12 @@ import {
 } from "react-router-dom";
 import AddChocolates from './Components/AddChocolates.jsx';
 import UpdateChocolate from './Components/UpdateChocolate.jsx';
+import AllChocolates from './Components/AllChocolates.jsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App></App>
+    element: <AllChocolates></AllChocolates>
   },
   {
     path: '/addChocolates',
